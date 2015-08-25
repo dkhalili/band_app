@@ -1,18 +1,17 @@
 <% @venues.each do |venue| %>
-	<h1>venue.name</h1>
 
-<%end%>
+	<h2><%=venue.name%></h2>
+	<%= link_to "Show Venue", venue %><br><br>
 
+	<%@events = venue.events%>
 
+	<%@events.each do |event|%>
+		<%=event.date%>
 
-<% @events.each do |event| %>
+	<% end %>
 
-	<h2><%=event.date%></h2>
-	<h4>Alcohol Serevd? <%=@event.alcohol_served%></h4>
-
-    <p><%= link_to 'Show', event %></p>
-    
 
 <% end %>
 
-<%= link_to 'Add Event', new_event_path %>
+
+
