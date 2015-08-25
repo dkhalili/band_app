@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<%= link_to 'Go back to Bands', bands_path %>
+
+	<h1>Edit <%= @band.name %> </h1>
+	<%= render 'form' %>
+
+	<%= link_to 'Delete', band_path(@band) , {method: :delete} %>
+</body>
+</html>
