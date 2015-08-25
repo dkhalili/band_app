@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
 
 	def index
-		@venues = Venue.all
+		if params[:date] != nil && params[:date] != ""
+			@events = Event.where(:date => params[:date])
+		else
+			@events = Event.all
+		end
 	end
 
 
@@ -22,9 +26,6 @@ class EventsController < ApplicationController
   		@event = Event.find(params[:id])
 
   	end
-
-
-
 
 
 private
