@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
 	def index
-		@venue = Venue.find(params[:venue_id])
+		@venue = Venue.all
 		@event = @venue.all
 	end
 
