@@ -1,13 +1,11 @@
 class EventsController < ApplicationController
 
 	def index
-		# binding.pry
 		if params[:date] != nil && params[:date] != ""
 			@events = Event.where(:date => params[:date])
 		else
 			@events = Event.all
 		end
-		# @venues = Venue.all
 	end
 
 
