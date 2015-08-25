@@ -11,8 +11,12 @@ class EventsController < ApplicationController
 
 	def new
 		@venue = Venue.find(params[:venue_id])
-		@bands = Band.all
 		@event = Event.new
+		if @venue[:family_friendly]
+			@bands = Band.where(:explicit_lyrics => false)
+		else
+			@bands = Band.all
+		end
 	end
 
 	def create		
@@ -26,7 +30,6 @@ class EventsController < ApplicationController
   		@event = Event.find(params[:id])
 
   	end
-
 
 private
 

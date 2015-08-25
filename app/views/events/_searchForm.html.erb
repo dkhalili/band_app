@@ -1,0 +1,5 @@
+<%= form_tag("/venues/events/", method: "get") do %>
+  <%= label_tag(:date, "Search for:") %>
+  <%= date_field_tag(:date) %>
+  <%= submit_tag("Search") %>
+<% end %>
