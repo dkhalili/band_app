@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
 
 	def index
-		@events = Event.all
-		@venues = Venue.all
+		if params[:date] != nil && params[:date] != ""
+ 			@events = Event.where(:date => params[:date])
+ 		else
+ 			@events = Event.all
+ 		end
 	end
 
 
@@ -13,7 +16,7 @@ class EventsController < ApplicationController
 	end
 
 	def create		
-
+		
 		@event = Event.create(event_params)
 		redirect_to venues_path
 
