@@ -1,7 +1,6 @@
 <% @venues.each do |venue| %>
 
 	<h2><%=venue.name%></h2>
-	<%= link_to "Show Venue", venue %><br><br>
 
 	<%@events = venue.events%>
 
