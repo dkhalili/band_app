@@ -2,21 +2,25 @@ class EventsController < ApplicationController
 
 	def index
 		if params[:date] != nil && params[:date] != ""
-			@events = Event.where(:date => params[:date])
-		else
-			@events = Event.all
-		end
+ 			@events = Event.where(:date => params[:date])
+ 		else
+ 			@events = Event.all
+ 		end
 	end
 
 
 	def new
 		@venue = Venue.find(params[:venue_id])
-		@bands = Band.all
 		@event = Event.new
+		if @venue[:family_friendly]
+			@bands = Band.where(:explicit_lyrics => false)
+		else
+			@bands = Band.all
+		end
 	end
 
 	def create		
-
+		
 		@event = Event.create(event_params)
 		redirect_to venues_path
 
