@@ -24,6 +24,9 @@ class EventsController < ApplicationController
 
   	end
 
+  	def search
+  		@events = Event.where(:date => params[:date])
+  	end
 
 private
 

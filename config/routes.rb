@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   #     resources :bands
   #   end
   # end
-    get "venues/events" =>"events#index"
+    get "venues/events" => "events#index"
   
+    get "venues/events/search" => "events#search"
+
     resources :venues do
       resources :events
     end
