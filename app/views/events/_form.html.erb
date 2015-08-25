@@ -18,7 +18,7 @@
   <%= f.label :Bands %>
 <!--   <%=options_from_collection_for_select(@bands, :id, :name)%> -->
 
-  <% bands_array = Band.all.map {|band| [band.name, band.id]} %>
+  <% bands_array = @bands.map {|band| [band.name, band.id]} %>
   <%= f.select(:band_id, options_for_select(bands_array) ) %>
 </div>
 
