@@ -13,6 +13,21 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  
+  # root "venues#index"  
+
+  # shallow do
+  #   resources :venues do
+  #     resources :events
+  #     resources :bands
+  #   end
+  # end
+  
+    resources :venues do
+      resources :events
+    end
+
+    resources :bands
 
   # Example resource route with options:
   #   resources :products do
