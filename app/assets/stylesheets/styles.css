@@ -1,0 +1,35 @@
+body {
+	background: url(http://www.mrwallpaper.com/wallpapers/gradient-background.jpg) no-repeat center center fixed;;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+html {
+	border: 2px solid black;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.header {
+	font-size: 300%;
+	text-align: center;
+
+}
+
+.navlinks{
+	text-align: center;
+	font-size: 120%;
+}
+
+.head_bar{
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+.copyright {
+text-align: center;
+}
