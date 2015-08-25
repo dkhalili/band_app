@@ -1,0 +1,11 @@
+<% @events.each do |event| %>
+
+	<h2><%=event.date%></h2>
+	<h4>Alcohol Serevd? <%=@event.alcohol_served%></h4>
+
+    <p><%= link_to 'Show', event %></p>
+    
+
+<% end %>
+
+<%= link_to 'Add Event', new_event_path %>
