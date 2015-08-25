@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>List of Bands</h1>
+	
+	<%= link_to 'Add band', new_band_path %>
+
+		<% @band.each do | elem | %>
+			<h2>Band Name: <%= link_to elem.name, edit_band_path(elem) %></h2>
+		
+				<h3> Genre: <%= elem.genre %></h3>
+				<h3> Explicit Lyrics: <%= elem.explicit_lyrics %></h3>
+
+	
+		<% end %>
+	
+</body>
+</html>
