@@ -1,0 +1,29 @@
+<%= form_for([@venue, @event]) do |f| %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :alcohol_served %><br>
+    <%= f.radio_button :alcohol_served, true %>
+    <%= f.label :True %><br>
+    <%= f.radio_button :alcohol_served, false %>
+    <%= f.label :False %><br>
+  </div>
+
+
+<div>
+  <%= f.label :Bands %>
+<!--   <%=options_from_collection_for_select(@bands, :id, :name)%> -->
+
+  <% bands_array = Band.all.map {|band| [band.name, band.id]} %>
+  <%= f.select(:band_id, options_for_select(bands_array) ) %>
+</div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
