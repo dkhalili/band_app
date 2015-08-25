@@ -20,9 +20,14 @@ class EventsController < ApplicationController
 	end
 
 	def create		
-		
-		@event = Event.create(event_params)
-		redirect_to venues_path
+
+		@eventFind = Event.where(:date => params[:event][:date])
+		if @eventFind.length == 0
+			@event = Event.create(event_params)
+			redirect_to venues_path
+		else
+			redirect_to new_venue_event_path
+		end
 
 	end
 
