@@ -23,7 +23,9 @@
 
     <%= f.label :family_friendly %><br>
     <%= f.radio_button :family_friendly, false, :checked => true  %>
-    <%= f.radio_button :family_friendly, true %><br>
+    <%= f.label :false %>
+    <%= f.radio_button :family_friendly, true %>
+    <%= f.label :true %><br>
 
     <%= f.submit %>
   </div>

@@ -1,10 +1,13 @@
+<h1>Venue: <%= @venue.name %> </h1>
+
 <% @events.each do |event| %>
 <% @band = Band.find(event.band_id) %>
- <h3><%= event.date %></h3>
- <p>Alcohol Served: <%= event.alcohol_served %></p>
- <p>Band: <%= @band.name %></p><br>
+ <h3>Date: <%= event.date %></h3>
+ <p>Band: <%= @band.name %></p>
+ <p>Alcohol Served: <%= event.alcohol_served %></p><br>
 <% end %>
 
 
 
-<%= link_to "new event", new_venue_event_path(@venue) %>
+<%= link_to "new event", new_venue_event_path(@venue) %><br>
+<%= link_to "edit event", edit_venue_path %>
