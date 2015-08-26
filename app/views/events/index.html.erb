@@ -6,7 +6,8 @@
 
 	<h2>Date: <%= event.date %></h2>
 	<% @venue = Venue.find(event.venue_id) %>
-	<h3>Venue: <%= @venue.name %></h3>
+	<h2><%= link_to @venue.name, @venue %></h2>
+
 
 
 <% end %>
