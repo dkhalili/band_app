@@ -1,0 +1,4 @@
+<h1>Edit Venue: <%= @venue.name %> </h1>
+<%= render 'form' %>
+
+<%= link_to 'Delete', venue_path(@venue) , {method: :delete} %>
